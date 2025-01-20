@@ -1,3 +1,4 @@
+---
 name: Comment on Merged PR
 
 on:
@@ -9,6 +10,8 @@ jobs:
   comment-on-merge:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
 
     steps:
       - name: Comment on merged PR
