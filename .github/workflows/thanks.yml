@@ -28,3 +28,16 @@ jobs:
               issue_number: prNumber,
               body: comment,
             });
+
+  open-issue:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - run: |
+          gh issue --repo ${{ github.repository }} \
+            comment --body "Nice one!"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
