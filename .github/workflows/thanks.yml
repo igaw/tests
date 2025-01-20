@@ -1,4 +1,3 @@
----
 name: Comment on Merged PR
 
 on:
@@ -19,7 +18,7 @@ jobs:
             const prNumber = context.payload.pull_request.number;
             const comment = 'Thanks for your contribution!';
 
-            await github.issues.createComment({
+            await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: prNumber,
