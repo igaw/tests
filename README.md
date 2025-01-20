@@ -1,3 +1,3 @@
 # Tests collection
 
-Random test scripts etc.
+Random test scripts and setup scripts.
